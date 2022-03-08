@@ -7,6 +7,7 @@ import 'pages/pruebaStack.dart';
 import 'pages/secondScreen.dart';
 import 'pages/datosPage.dart';
 import 'pages/stackEjemplo.dart';
+import 'pages/formScreen.dart';
 
 void main() { //llama la funcion princiapl
   runApp(MaterialApp(
@@ -14,7 +15,7 @@ void main() { //llama la funcion princiapl
     title: 'Demo Flutter',
     initialRoute: '/',
     routes:{
-      '/':(context) => const HomePage(),
+      '/':(context) => MyStateFulWidget(),
       '/second':(context) => const SecondScreeen(),
       '/datos':(context) => const DatosPage(),
       '/stack':(context) => const PruebaStack(),
