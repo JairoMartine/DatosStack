@@ -1,37 +1,33 @@
-
-//import 'dart:js';
-
-import 'package:flutter/material.dart'; //paquetes
-
+import 'package:flutter/material.dart';
 import 'pages/pruebaStack.dart';
 import 'pages/secondScreen.dart';
 import 'pages/datosPage.dart';
 import 'pages/stackEjemplo.dart';
 import 'pages/formScreen.dart';
+import 'pages/tarjeta.dart';
 
-void main() { //llama la funcion princiapl
+void main() { 
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     title: 'Demo Flutter',
     initialRoute: '/',
     routes:{
-      '/':(context) => MyStateFulWidget(),
+      '/':(context) => const HomePage(),
       '/second':(context) => const SecondScreeen(),
       '/datos':(context) => const DatosPage(),
       '/stack':(context) => const PruebaStack(),
-      '/pruebaStack':(context) => const StackEjemplo()
+      '/pruebaStack':(context) => const StackEjemplo(),
+      '/formScreen':(context) => const MyStateFulWidget(),
+      '/cardScreen':(context) => const MyStateFulWidget2()
 
     },
-   // home: HomePage(),
   ));
 }
-// no sufre cambios StatelessWidget estaticas
 
 class HomePage extends StatelessWidget{
   const HomePage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    //context en donde estoy
     return Scaffold(
         appBar: AppBar(
           title:const Text('Página inicial'),
@@ -47,7 +43,6 @@ class HomePage extends StatelessWidget{
               icon:const Icon(Icons.search),
               onPressed: () => {}
               ),
-            //IconButton(onPressed: () => {}, icon: Icon(Icons.duo)),
           ],
           ),
           body: Center(
@@ -57,7 +52,6 @@ class HomePage extends StatelessWidget{
               children: <Widget>[
                 ElevatedButton(
                   onPressed: () {
-                   
                    Navigator.pushNamed(context, '/second');
                   },
                   child: const Text('Segunda pantalla'),
@@ -65,7 +59,6 @@ class HomePage extends StatelessWidget{
                 SizedBox(height: 10.0,),
                 ElevatedButton(
                   onPressed: () {
-                    
                    Navigator.pushNamed(context, '/datos');
                   },
                   child: const Text('Datos'),
@@ -73,7 +66,6 @@ class HomePage extends StatelessWidget{
                 SizedBox(height: 10.0,),
                 ElevatedButton(
                   onPressed: () {
-                    
                    Navigator.pushNamed(context, '/stack');
                   },
                   child: const Text('Stack'),
@@ -81,19 +73,27 @@ class HomePage extends StatelessWidget{
                 SizedBox(height: 10.0,),
                 ElevatedButton(
                   onPressed: () {
-                    
                    Navigator.pushNamed(context, '/pruebaStack');
                   },
                   child: const Text('Datos Stack'),
+                ),
+                SizedBox(height: 10.0,),
+                ElevatedButton(
+                  onPressed: () {
+                   Navigator.pushNamed(context, '/formScreen');
+                  },
+                  child: const Text('Form Screen'),
+                ),
+                SizedBox(height: 10.0,),
+                ElevatedButton(
+                  onPressed: () {
+                   Navigator.pushNamed(context, '/cardScreen');
+                  },
+                  child: const Text('Pago con tarjeta'),
                 )
               ]
             ),
           ),
-            
       );
-    
   }
 }
-
-
-
